@@ -1,0 +1,65 @@
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-tab">
+      <view class="weui-navbar">
+        <block wx:for-items="{{tabs}}" wx:key="{{index}}">
+          <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+            <view class="weui-navbar__title">{{item}}</view>
+          </view>
+        </block>
+        <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+      </view>
+      <view class="weui-tab__panel">
+        <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+
+          <!--周排行  -->
+          <block wx:for="{{rankList}}" wx:key="image">
+            <view class="rankList-list-root-view">
+              <image src='{{item.data.cover.feed}}' class="rankList-list-image" mode='aspectFill' bindtap='goViewDetail' data-videoUrl="{{item.data.playUrl}}" data-category='{{item.data.category}}' data-description='{{item.data.description}}' data-title='{{item.data.title}}'
+                data-blurred_cover='{{item.data.cover.blurred}}' data-video_id='{{item.data.id}}'></image>
+              <view class="rankList-list-title-view">
+                <text class="rankList-list-title">{{item.data.title}}</text>
+              </view>
+
+            </view>
+
+          </block>
+
+
+        </view>
+        <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+        
+           <!--月排行  -->
+          <block wx:for="{{monthRankList}}" wx:key="image">
+            <view class="rankList-list-root-view">
+              <image src='{{item.data.cover.feed}}' class="rankList-list-image" mode='aspectFill' bindtap='goViewDetail' data-videoUrl="{{item.data.playUrl}}" data-category='{{item.data.category}}' data-description='{{item.data.description}}' data-title='{{item.data.title}}'
+                data-blurred_cover='{{item.data.cover.blurred}}' data-video_id='{{item.data.id}}'></image>
+              <view class="rankList-list-title-view">
+                <text class="rankList-list-title">{{item.data.title}}</text>
+              </view>
+
+            </view>
+
+          </block>
+
+        </view>
+        <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
+        
+            <!--总排行  -->
+          <block wx:for="{{allRankList}}" wx:key="image">
+            <view class="rankList-list-root-view">
+              <image src='{{item.data.cover.feed}}' class="rankList-list-image" mode='aspectFill' bindtap='goViewDetail' data-videoUrl="{{item.data.playUrl}}" data-category='{{item.data.category}}' data-description='{{item.data.description}}' data-title='{{item.data.title}}'
+                data-blurred_cover='{{item.data.cover.blurred}}' data-video_id='{{item.data.id}}'></image>
+              <view class="rankList-list-title-view">
+                <text class="rankList-list-title">{{item.data.title}}</text>
+              </view>
+
+            </view>
+
+          </block>
+        
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

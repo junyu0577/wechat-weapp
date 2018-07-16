@@ -1,0 +1,32 @@
+<!--pages/userCenter/user_center.wxml-->
+
+<view>
+
+  <view class="user-center-user-background">
+
+    <view class="user-center-user-background-info-view">
+
+     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 微信登录 </button>
+
+      <text class="user-center-username-view">{{userInfo.nickName}}</text>
+
+      <text class="user-center-unitname-view">{{unit_name}}</text>
+
+    </view>
+
+    <image src="{{userInfo.avatarUrl}}" class="user-center-user-avatar" />
+
+  </view>
+
+  <view class=".user-center-list-outer-view">
+    <image src="/images/message_icon.png" class="user-center-list-left-image"></image>
+    <text class="find-text" class="user-center-list-text">意见和建议</text>
+    <image src="/images/right_arrow_icon.png" class="user-center-list-right-image"></image>
+  </view>
+
+
+
+
+
+
+</view>

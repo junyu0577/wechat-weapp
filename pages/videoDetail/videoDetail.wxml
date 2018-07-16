@@ -1,0 +1,45 @@
+<!--pages/videoDetail/videoDetail.wxml -->
+<view style='background:url({{info_bg_cover}});'>
+  <view style='height:200px;'>
+    <video id="video" src="{{videoUrl}}" controls style='width:100%;height:inherit' autoplay="true"></video>
+  </view>
+
+
+  <view style='width：100%;line-height:200px;'>
+    <view style='line-height:40px;'>
+      <text class='video-text-title'>{{video_title}}</text>
+
+    </view>
+
+    <view style='line-height:40px'>
+      <text class='video-text-category'>{{video_category}}</text>
+
+    </view>
+
+    <view style='line-height:20px;margin-left:20px;margin-right:20px;padding-bottom:10px'>
+      <text class='video-text-desc'>{{video_description}}</text>
+
+    </view>
+
+  </view>
+
+
+
+
+  <!--推荐列表  -->
+  <view>
+    <block wx:for="{{recommendList}}" wx:key="image">
+      <view class="video-recommend_root_view">
+
+        <image src='{{item.data.cover.feed}}' mode='aspectFill' class="video-recommend_image"></image>
+
+        <view class="video-recommend_title_view">
+          <text class="video-recommend_title_text">{{item.data.title}}</text>
+        </view>
+
+      </view>
+    </block>
+  </view>
+
+
+</view>
