@@ -23,6 +23,9 @@ page {
 
 .rankList-list-title {
   color: #262626;
+  font-size:14px;
+  float:left;
+  margin-left:20px
 }
 
 .rankList-list-image {
@@ -34,4 +37,19 @@ page {
   position: relative;
   text-align: center;
   height: 250px;
+}
+
+.rankList-list-view{
+  width:100%;
+  height:50px;
+  line-height:50px
+}
+
+.rankList-list-author-icon{
+  width:40px;
+  height:40px;
+  float:left;
+  margin-top:5px;
+  margin-left:10px;
+  border-radius:100px;
 }

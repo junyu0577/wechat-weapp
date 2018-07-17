@@ -1,0 +1,35 @@
+<!--pages/find/find.wxml-->
+<view>
+
+  <block wx:for="{{categoriesList}}" wx:key="image">
+
+    <view>
+
+      <view class="find-list-view-left">
+        <image src="{{item.bgPicture_l}}" class="find-list-image"></image>
+
+        <view class="find-list-image-cover" />
+
+        <view class="find-list-text-view">
+          <text class="find-list-text">{{item.name_l}}</text>
+        </view>
+      </view>
+
+
+      <view class="find-list-view-right">
+        <image src="{{item.bgPicture_r}}" class="find-list-image"></image>
+
+        <view class="find-list-image-cover" />
+
+
+        <view class="find-list-text-view">
+          <text class="find-list-text">{{item.name_r}}</text>
+        </view>
+      </view>
+
+
+    </view>
+
+  </block>
+
+</view>

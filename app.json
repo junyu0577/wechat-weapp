@@ -2,6 +2,7 @@
   "pages": [
     "pages/index/index",
     "pages/rankList/rankList",
+    "pages/find/find",
     "pages/logs/logs",
     "pages/userCenter/user_center",
     "pages/videoDetail/videoDetail"
@@ -23,6 +24,12 @@
         "selectedIconPath": "/images/ic_home_selected.png",
         "pagePath": "pages/index/index",
         "text": "首页"
+      },
+      {
+        "iconPath": "/images/ic_discovery_normal.png",
+        "selectedIconPath": "/images/ic_discovery_selected.png",
+        "pagePath": "pages/find/find",
+        "text": "发现"
       },
       {
         "iconPath": "/images/ic_hot_normal.png",

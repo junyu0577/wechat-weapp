@@ -13,6 +13,8 @@ var BANNER = 'v2/feed?&num=1&phoneSystem=&phoneModel='
 
 var DAILY_DATA = 'v2/feed?date=[timeStamp]&num=1&phoneSystem=&phoneModel='
 
+var CATEGORIES = 'v4/categories?phoneSystem=&phoneModel='
+
 
 //开眼热门排行
 function getWeekRankList() {
@@ -22,6 +24,11 @@ function getWeekRankList() {
 //首页每日数据
 function getDailyList() {
   return KAIYAN_URL + DAILY_DATA;
+}
+
+//分类
+function getCategories() {
+  return KAIYAN_URL + CATEGORIES;
 }
 
 //推荐列表
@@ -39,5 +46,6 @@ module.exports = {
   RANK_LIST_ACTION: getWeekRankList,
   VIDEO_URL: VIDEO_PATH,
   RECOMMEND_VIDEO_ACTION: getRecommendVideoList,
-  DAILY_LIST_ACTION: getDailyList
+  DAILY_LIST_ACTION: getDailyList,
+  CATEGORIES_ACTION: getCategories
 }

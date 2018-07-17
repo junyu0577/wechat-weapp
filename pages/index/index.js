@@ -42,7 +42,7 @@ Page({
         var conut = 0
         for (var index in res.data.issueList[0].itemList) {
           if (res.data.issueList[0].itemList[index].type == 'video') {
-            console.log('..'+res.data.issueList[0].itemList[index].data.author.icon)
+
             that.setData({
 
               ['imgUrls[' + conut + '].data.cover.feed']: res.data.issueList[0].itemList[index].data.cover.feed,
@@ -52,7 +52,7 @@ Page({
               ['imgUrls[' + conut + '].data.description']: res.data.issueList[0].itemList[index].data.description,
               ['imgUrls[' + conut + '].data.cover.blurred']: res.data.issueList[0].itemList[index].data.cover.blurred,
               ['imgUrls[' + conut + '].data.id']: res.data.issueList[0].itemList[index].data.id,
-           
+
 
             })
             conut++
@@ -77,7 +77,7 @@ Page({
         var conut = 0
         for (var index in res.data.issueList[0].itemList) {
           if (res.data.issueList[0].itemList[index].type == 'video') {
-           
+
             that.setData({
 
               ['dailyList[' + conut + '].data.cover.feed']: res.data.issueList[0].itemList[index].data.cover.feed,
@@ -97,7 +97,7 @@ Page({
       }
     })
   },
-  goViewDetail: function (data) {
+  goViewDetail: function(data) {
     var datas = data.currentTarget.dataset;
     var playUrl = datas.videourl
     // playUrl = playUrl.substring(playUrl.indexOf('?')+1, playUrl.length)
