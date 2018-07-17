@@ -11,6 +11,8 @@
 
         <view class="video-recommend_title_view">
           <text class="video-recommend_title_text">{{item.data.title}}</text>
+          <text class="video-recommend_duration_text">{{item.data.duration}} </text>
+        
         </view>
 
       </view>

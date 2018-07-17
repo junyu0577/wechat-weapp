@@ -4,15 +4,20 @@
   line-height: 30px;
   position: absolute;
   left: 0;
-  top: 85px;
+  top: 80px;
   width: 100%;
 }
 
 .video-recommend_title_text {
   font-size: 16px;
   color: #fff;
-  vertical-align: center;
+  display:block;
 }
+.video-recommend_duration_text {
+  font-size: 14px;
+  color: #fff;
+}
+
 
 .video-recommend_root_view {
   width: 100%;
@@ -33,7 +38,5 @@
   background-color: #000;
   position: absolute;
   top: 0;
-  border-radius: 8px;
   opacity: 0.4;
 }
-

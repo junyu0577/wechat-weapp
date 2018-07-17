@@ -1,6 +1,7 @@
 const app = getApp()
 var that
 var API = require('../../utils/api.js')
+var Utils = require('../../utils/util.js')
 var id, name
 Page({
   data: {
@@ -44,6 +45,7 @@ Page({
             ['videoList[' + index + '].data.description']: res.data.itemList[index].data.description,
             ['videoList[' + index + '].data.cover.blurred']: res.data.itemList[index].data.cover.blurred,
             ['videoList[' + index + '].data.id']: res.data.itemList[index].data.id,
+            ['videoList[' + index + '].data.duration']: Utils.durationFormat(res.data.itemList[index].data.duration)
 
           })
 

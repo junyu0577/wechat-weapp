@@ -89,7 +89,7 @@ Page({
             }
 
             tags = tags + Utils.durationFormat(res.data.issueList[0].itemList[index].data.duration)
-            console.log(globalCount)
+           
             that.setData({
 
               ['dailyList[' + globalCount + '].data.cover.feed']: res.data.issueList[0].itemList[index].data.cover.feed,
