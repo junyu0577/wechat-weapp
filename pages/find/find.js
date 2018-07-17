@@ -21,7 +21,7 @@ Page({
       success: function(res) {
         console.log(res.data)
         var size = res.data.length / 2
-        console.log('size:' + size)
+       
         for (var index in res.data) {
           if (index < size) {
             that.setData({
@@ -32,11 +32,21 @@ Page({
               ['categoriesList[' + index + '].name_l']: '#' + res.data[index * 2].name,
               ['categoriesList[' + index + '].name_r']: '#' + res.data[(index * 2) + 1].name,
 
+
+              ['categoriesList[' + index + '].id_l']: '#' + res.data[index * 2].id,
+              ['categoriesList[' + index + '].id_r']: '#' + res.data[(index * 2) + 1].id,
             })
           }
 
         }
       }
     })
-  }
+  },
+  goVideoList: function (data) {
+    var datas = data.currentTarget.dataset;
+    console.log(datas);
+    wx.navigateTo({
+      url: '../categoryVideos/category_videos?id=' + datas.category_id + '&name=' + datas.category_name
+    })
+  },
 })

@@ -1,0 +1,28 @@
+/* pages/categoryVideos/category_videos.wxss */
+
+.video-recommend_title_view {
+  line-height: 30px;
+  position: absolute;
+  left: 0;
+  top: 85px;
+  width: 100%;
+}
+
+.video-recommend_title_text {
+  font-size: 16px;
+  color: #fff;
+  vertical-align: center;
+}
+
+.video-recommend_root_view {
+  width: 100%;
+  height: 200px;
+  line-height: 200px;
+  position: relative;
+  text-align: center;
+}
+
+.video-recommend_image {
+  width: 100%;
+  height: 100%;
+}

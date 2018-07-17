@@ -5,7 +5,8 @@
     "pages/find/find",
     "pages/logs/logs",
     "pages/userCenter/user_center",
-    "pages/videoDetail/videoDetail"
+    "pages/videoDetail/videoDetail",
+    "pages/categoryVideos/category_videos"
   ],
   "window": {
     "backgroundTextStyle": "dark",

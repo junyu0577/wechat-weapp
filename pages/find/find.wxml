@@ -5,7 +5,7 @@
 
     <view>
 
-      <view class="find-list-view-left">
+      <view class="find-list-view-left" bindtap='goVideoList' data-category_id='{{item.id_l}}' data-category_name='{{item.name_l}}'>
         <image src="{{item.bgPicture_l}}" class="find-list-image"></image>
 
         <view class="find-list-image-cover" />
@@ -16,7 +16,7 @@
       </view>
 
 
-      <view class="find-list-view-right">
+      <view class="find-list-view-right" bindtap='goVideoList' data-category_id='{{item.id_r}}' data-category_name='{{item.name_r}}'>
         <image src="{{item.bgPicture_r}}" class="find-list-image"></image>
 
         <view class="find-list-image-cover" />
