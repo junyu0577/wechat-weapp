@@ -7,6 +7,7 @@
         data-video_id='{{item.data.id}}'>
 
         <image src='{{item.data.cover.feed}}' mode='aspectFill' class="video-recommend_image"></image>
+        <view class="video-recommend_image-cover" />
 
         <view class="video-recommend_title_view">
           <text class="video-recommend_title_text">{{item.data.title}}</text>

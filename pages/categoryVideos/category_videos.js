@@ -22,9 +22,6 @@ Page({
 
     that.getVideoList()
 
-
-
-
   },
   getVideoList: function() {
     var reqUrl = API.CATEGORY_VIDEO_LIST_ACTION()
@@ -35,7 +32,6 @@ Page({
       method: 'GET',
       success: function(res) {
         console.log(res.data.itemList)
-
 
         for (var index in res.data.itemList) {
 
@@ -49,11 +45,9 @@ Page({
             ['videoList[' + index + '].data.cover.blurred']: res.data.itemList[index].data.cover.blurred,
             ['videoList[' + index + '].data.id']: res.data.itemList[index].data.id,
 
-
           })
 
         }
-
 
       }
     })

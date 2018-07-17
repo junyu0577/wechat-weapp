@@ -2,27 +2,33 @@
 
 <view>
 
-  <view class="user-center-user-background">
+  <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="user-center-login-btn"> 微信登录 </button>
 
-    <view class="user-center-user-background-info-view">
+  <view wx:if="{{hasUserInfo}}">
 
-     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 微信登录 </button>
+    <view class="user-center-user-background">
 
-      <text class="user-center-username-view">{{userInfo.nickName}}</text>
+      <view class="user-center-user-background-info-view">
 
-      <text class="user-center-unitname-view">{{unit_name}}</text>
+        <text class="user-center-username-view">{{userInfo.nickName}}</text>
+
+        <text class="user-center-unitname-view">{{unit_name}}</text>
+
+      </view>
+
+      <image src="{{userInfo.avatarUrl}}" class="user-center-user-avatar" />
 
     </view>
 
-    <image src="{{userInfo.avatarUrl}}" class="user-center-user-avatar" />
+    <view class=".user-center-list-outer-view">
+      <image src="/images/message_icon.png" class="user-center-list-left-image"></image>
+      <text class="find-text" class="user-center-list-text">意见和建议</text>
+      <image src="/images/right_arrow_icon.png" class="user-center-list-right-image"></image>
+    </view>
 
   </view>
 
-  <view class=".user-center-list-outer-view">
-    <image src="/images/message_icon.png" class="user-center-list-left-image"></image>
-    <text class="find-text" class="user-center-list-text">意见和建议</text>
-    <image src="/images/right_arrow_icon.png" class="user-center-list-right-image"></image>
-  </view>
+
 
 
 
