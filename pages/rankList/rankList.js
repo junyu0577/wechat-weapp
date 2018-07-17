@@ -57,6 +57,7 @@ Page({
     });
   },
   getRankList: function(interval) {
+    wx.showNavigationBarLoading()
     var reqUrl = API.RANK_LIST_ACTION()
     reqUrl = reqUrl.replace('[interval]', interval)
     wx.request({
@@ -67,8 +68,9 @@ Page({
       },
       method: 'GET',
       success: function(res) {
-        console.log(res.data.itemList)
 
+        console.log(res.data.itemList)
+        wx.hideNavigationBarLoading()
 
         for (var index in res.data.itemList) {
           if (interval == 'weekly') {

@@ -20,7 +20,7 @@
 
     </view>
 
-    <view class=".user-center-list-outer-view">
+    <view class=".user-center-list-outer-view" bindtap='goSuggest'>
       <image src="/images/message_icon.png" class="user-center-list-left-image"></image>
       <text class="find-text" class="user-center-list-text">意见和建议</text>
       <image src="/images/right_arrow_icon.png" class="user-center-list-right-image"></image>

@@ -14,6 +14,27 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+function durationFormat(duration) {
+  var minute = parseInt(duration / 60)
+  var second = duration % 60
+
+  if (minute <= 9) {
+    if (second <= 9) {
+      duration = '0' + minute + '\'' + '0' + second + '\"'
+    } else {
+      duration = '0' + minute + '\'' + second + '\"'
+    }
+  } else {
+    if (second <= 9) {
+      duration = minute + '\'' + '0' + +second + '\"'
+    } else {
+      duration = minute + '\'' + second + '\"'
+    }
+  }
+  return duration
+}
+
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  durationFormat: durationFormat
 }

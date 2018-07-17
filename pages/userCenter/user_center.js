@@ -47,6 +47,13 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+  goSuggest:function(){
+    wx.showToast({
+      title: 'developing',
+      icon: 'none',
+      duration:2000
+    })
   }
 
 })

@@ -3,6 +3,7 @@
 const app = getApp()
 var that
 var API = require('../../utils/api.js')
+var Utils = require('../../utils/util.js')
 
 Page({
   data: {
@@ -78,6 +79,14 @@ Page({
         for (var index in res.data.issueList[0].itemList) {
           if (res.data.issueList[0].itemList[index].type == 'video') {
 
+            var tags = '#'
+
+            for (var j in res.data.issueList[0].itemList[index].data.tags) {
+              tags = tags + res.data.issueList[0].itemList[index].data.tags[j].name + '/'
+            }
+
+            tags = tags + Utils.durationFormat(res.data.issueList[0].itemList[index].data.duration)
+
             that.setData({
 
               ['dailyList[' + conut + '].data.cover.feed']: res.data.issueList[0].itemList[index].data.cover.feed,
@@ -87,7 +96,9 @@ Page({
               ['dailyList[' + conut + '].data.description']: res.data.issueList[0].itemList[index].data.description,
               ['dailyList[' + conut + '].data.cover.blurred']: res.data.issueList[0].itemList[index].data.cover.blurred,
               ['dailyList[' + conut + '].data.id']: res.data.issueList[0].itemList[index].data.id,
-              ['dailyList[' + conut + '].data.author.icon']: res.data.issueList[0].itemList[index].data.author.icon
+              ['dailyList[' + conut + '].data.author.icon']: res.data.issueList[0].itemList[index].data.author.icon,
+              ['dailyList[' + conut + '].data.tags']: tags
+
             })
             conut++
           }

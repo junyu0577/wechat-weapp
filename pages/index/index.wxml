@@ -18,7 +18,12 @@
     <view class="rankList-list-root-view">
       <view class="rankList-list-view">
         <image src="{{item.data.author.icon}}" class="rankList-list-author-icon"></image>
-        <text class="rankList-list-title">{{item.data.title}}</text>
+        <view style='line-height:25px;'>
+          <text class="rankList-list-title">{{item.data.title}}</text>
+          <text class="rankList-list-tags">{{item.data.tags}}</text>
+        </view>
+      
+        <!-- <text class="rankList-list-title">{{item.data.title}}</text> -->
       </view>
       <image src='{{item.data.cover.feed}}' class="rankList-list-image" mode='aspectFill' bindtap='goViewDetail' data-videoUrl="{{item.data.playUrl}}" data-category='{{item.data.category}}' data-description='{{item.data.description}}' data-title='{{item.data.title}}'
         data-blurred_cover='{{item.data.cover.blurred}}' data-video_id='{{item.data.id}}'></image>
