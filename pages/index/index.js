@@ -4,6 +4,9 @@ const app = getApp()
 var that
 var API = require('../../utils/api.js')
 var Utils = require('../../utils/util.js')
+var timeStamp
+var globalCount = 0
+var page = 0
 
 Page({
   data: {
@@ -24,13 +27,10 @@ Page({
     // 获取轮播图
     that.getBanner()
 
-    that.getDailyData();
+    timeStamp = new Date().valueOf() - 864001000;
+    that.getDailyData(timeStamp, page);
 
 
-  },
-  //下拉刷新
-  onPullDownRefresh: function() {
-    // wx.stopPullDownRefresh()
   },
   getBanner: function() {
     wx.request({
@@ -63,9 +63,8 @@ Page({
       }
     })
   },
-  getDailyData: function() {
+  getDailyData: function(timeStamp, page) {
     var reqUrl = API.DAILY_LIST_ACTION();
-    var timeStamp = new Date().valueOf() - 864001000;
     reqUrl = reqUrl.replace('[timeStamp]', timeStamp)
     console.log(reqUrl)
     wx.request({
@@ -74,8 +73,12 @@ Page({
       method: 'GET',
       success: function(res) {
         console.log(res.data.issueList[0].itemList)
+        wx.stopPullDownRefresh()
 
-        var conut = 0
+        if (page == 0) {
+          that.clearData()
+        }
+
         for (var index in res.data.issueList[0].itemList) {
           if (res.data.issueList[0].itemList[index].type == 'video') {
 
@@ -86,21 +89,21 @@ Page({
             }
 
             tags = tags + Utils.durationFormat(res.data.issueList[0].itemList[index].data.duration)
-
+            console.log(globalCount)
             that.setData({
 
-              ['dailyList[' + conut + '].data.cover.feed']: res.data.issueList[0].itemList[index].data.cover.feed,
-              ['dailyList[' + conut + '].data.title']: res.data.issueList[0].itemList[index].data.title,
-              ['dailyList[' + conut + '].data.playUrl']: res.data.issueList[0].itemList[index].data.playUrl,
-              ['dailyList[' + conut + '].data.category']: res.data.issueList[0].itemList[index].data.category,
-              ['dailyList[' + conut + '].data.description']: res.data.issueList[0].itemList[index].data.description,
-              ['dailyList[' + conut + '].data.cover.blurred']: res.data.issueList[0].itemList[index].data.cover.blurred,
-              ['dailyList[' + conut + '].data.id']: res.data.issueList[0].itemList[index].data.id,
-              ['dailyList[' + conut + '].data.author.icon']: res.data.issueList[0].itemList[index].data.author.icon,
-              ['dailyList[' + conut + '].data.tags']: tags
+              ['dailyList[' + globalCount + '].data.cover.feed']: res.data.issueList[0].itemList[index].data.cover.feed,
+              ['dailyList[' + globalCount + '].data.title']: res.data.issueList[0].itemList[index].data.title,
+              ['dailyList[' + globalCount + '].data.playUrl']: res.data.issueList[0].itemList[index].data.playUrl,
+              ['dailyList[' + globalCount + '].data.category']: res.data.issueList[0].itemList[index].data.category,
+              ['dailyList[' + globalCount + '].data.description']: res.data.issueList[0].itemList[index].data.description,
+              ['dailyList[' + globalCount + '].data.cover.blurred']: res.data.issueList[0].itemList[index].data.cover.blurred,
+              ['dailyList[' + globalCount + '].data.id']: res.data.issueList[0].itemList[index].data.id,
+              ['dailyList[' + globalCount + '].data.author.icon']: res.data.issueList[0].itemList[index].data.author.icon,
+              ['dailyList[' + globalCount + '].data.tags']: tags
 
             })
-            conut++
+            globalCount++
           }
 
         }
@@ -120,5 +123,25 @@ Page({
       url: '../videoDetail/videoDetail?description=' + datas.description + '&category=' + datas.category + '&title=' + datas.title + '&videoId=' + datas.video_id
     })
   },
+  onReachBottom: function() {
+    timeStamp = timeStamp - 864001000;
+    page++
+    that.getDailyData(timeStamp, page)
+  },
+  //下拉刷新
+  onPullDownRefresh: function() {
+
+    timeStamp = new Date().valueOf() - 864001000;
+    page = 0
+    globalCount = 0
+    that.getDailyData(timeStamp, page);
+
+  },
+  clearData: function() {
+    this.setData({
+      dailyList: []
+    })
+
+  }
 
 })
