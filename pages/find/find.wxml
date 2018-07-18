@@ -3,30 +3,17 @@
 
   <block wx:for="{{categoriesList}}" wx:key="image">
 
-    <view>
+    <view style='margin-left:5px;margin-right:5px;'>
 
-      <view class="find-list-view-left" bindtap='goVideoList' data-category_id='{{item.id_l}}' data-category_name='{{item.name_l}}'>
-        <image src="{{item.bgPicture_l}}" class="find-list-image"></image>
+      <navigator class="weui-grid" hover-class="weui-grid_active" bindtap='goVideoList' data-category_id='{{item.id}}' data-category_name='{{item.name}}'> 
+        <image class="weui-grid-icon" src="{{item.bgPicture}}"  />
 
-        <view class="find-list-image-cover" />
+        <view class="weui-grid-icon-cover" style=' width:{{cover_image_width}}px;' />
 
-        <view class="find-list-text-view">
-          <text class="find-list-text">{{item.name_l}}</text>
+        <view class="find-list-text-view" style='width:{{text_view_width}}px;'>
+          <text class="find-list-text">{{item.name}}</text>
         </view>
-      </view>
-
-
-      <view class="find-list-view-right" bindtap='goVideoList' data-category_id='{{item.id_r}}' data-category_name='{{item.name_r}}'>
-        <image src="{{item.bgPicture_r}}" class="find-list-image"></image>
-
-        <view class="find-list-image-cover" />
-
-
-        <view class="find-list-text-view">
-          <text class="find-list-text">{{item.name_r}}</text>
-        </view>
-      </view>
-
+      </navigator>
 
     </view>
 

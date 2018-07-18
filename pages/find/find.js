@@ -4,13 +4,14 @@ var API = require('../../utils/api.js')
 
 Page({
   data: {
-    categoriesList: []
+    categoriesList: [],
+    cover_image_width: wx.getSystemInfoSync().windowWidth / 2 - 15, //coever宽度
+    text_view_width: wx.getSystemInfoSync().windowWidth / 2 - 15 //文字的view宽度
   },
   onLoad: function() {
     that = this
 
     that.getCateGories();
-
 
   },
   getCateGories: function() {
@@ -20,29 +21,22 @@ Page({
       method: 'GET',
       success: function(res) {
         console.log(res.data)
-        var size = res.data.length / 2
-       
+
         for (var index in res.data) {
-          if (index < size) {
-            that.setData({
+          that.setData({
 
-              ['categoriesList[' + index + '].bgPicture_l']: res.data[index * 2].bgPicture,
-              ['categoriesList[' + index + '].bgPicture_r']: res.data[(index * 2) + 1].bgPicture,
+            ['categoriesList[' + index + '].bgPicture']: res.data[index].bgPicture,
 
-              ['categoriesList[' + index + '].name_l']: '#' + res.data[index * 2].name,
-              ['categoriesList[' + index + '].name_r']: '#' + res.data[(index * 2) + 1].name,
+            ['categoriesList[' + index + '].name']: '#' + res.data[index].name,
 
-
-              ['categoriesList[' + index + '].id_l']: '#' + res.data[index * 2].id,
-              ['categoriesList[' + index + '].id_r']: '#' + res.data[(index * 2) + 1].id,
-            })
-          }
-
+            ['categoriesList[' + index + '].id']: '#' + res.data[index].id,
+          })
         }
+
       }
     })
   },
-  goVideoList: function (data) {
+  goVideoList: function(data) {
     var datas = data.currentTarget.dataset;
     console.log(datas);
     wx.navigateTo({
