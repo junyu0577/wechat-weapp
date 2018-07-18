@@ -1,7 +1,7 @@
 'use strict';
 
 //开眼服务器地址
-var KAIYAN_URL = 'http://baobab.kaiyanapp.com/api/'
+var KAIYAN_URL = 'https://baobab.kaiyanapp.com/api/'
 
 var VIDEO_PATH = 'v1/playUrl?'
 

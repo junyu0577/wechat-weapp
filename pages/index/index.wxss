@@ -37,6 +37,8 @@ page {
   position: absolute;
   left: 60px;
   top: 22px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .rankList-list-image {

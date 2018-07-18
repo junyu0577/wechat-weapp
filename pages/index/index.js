@@ -85,11 +85,14 @@ Page({
             var tags = '#'
 
             for (var j in res.data.issueList[0].itemList[index].data.tags) {
+              if (j > 3) {
+                break
+              }
               tags = tags + res.data.issueList[0].itemList[index].data.tags[j].name + '/'
             }
 
             tags = tags + Utils.durationFormat(res.data.issueList[0].itemList[index].data.duration)
-           
+
             that.setData({
 
               ['dailyList[' + globalCount + '].data.cover.feed']: res.data.issueList[0].itemList[index].data.cover.feed,
