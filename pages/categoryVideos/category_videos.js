@@ -38,13 +38,7 @@ Page({
 
           that.setData({
 
-            ['videoList[' + index + '].data.cover.feed']: res.data.itemList[index].data.cover.feed,
-            ['videoList[' + index + '].data.title']: res.data.itemList[index].data.title,
-            ['videoList[' + index + '].data.playUrl']: res.data.itemList[index].data.playUrl,
-            ['videoList[' + index + '].data.category']: res.data.itemList[index].data.category,
-            ['videoList[' + index + '].data.description']: res.data.itemList[index].data.description,
-            ['videoList[' + index + '].data.cover.blurred']: res.data.itemList[index].data.cover.blurred,
-            ['videoList[' + index + '].data.id']: res.data.itemList[index].data.id,
+            ['videoList[' + index + ']']: res.data.itemList[index],
             ['videoList[' + index + '].data.duration']: Utils.durationFormat(res.data.itemList[index].data.duration)
 
           })
@@ -55,15 +49,15 @@ Page({
     })
   },
   goViewDetail: function(data) {
-    var datas = data.currentTarget.dataset;
-    var playUrl = datas.videourl
+    var datas = data.currentTarget.dataset.videodata;
+
     // playUrl = playUrl.substring(playUrl.indexOf('?')+1, playUrl.length)
     //暂时使用缓存的方式进行传参，无法使用url的方式传递视频链接
-    wx.setStorageSync('videoUrl', playUrl)
+    wx.setStorageSync('videoUrl', datas.playUrl)
 
-    wx.setStorageSync('bgBlurredCover', datas.blurred_cover)
+    wx.setStorageSync('bgBlurredCover', datas.cover.blurred)
     wx.navigateTo({
-      url: '../videoDetail/videoDetail?description=' + datas.description + '&category=' + datas.category + '&title=' + datas.title + '&videoId=' + datas.video_id
+      url: '../videoDetail/videoDetail?description=' + datas.description + '&category=' + datas.category + '&title=' + datas.title + '&videoId=' + datas.id
     })
   },
 })

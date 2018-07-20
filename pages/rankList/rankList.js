@@ -75,36 +75,21 @@ Page({
         for (var index in res.data.itemList) {
           if (interval == 'weekly') {
             that.setData({
-              ['rankList[' + index + '].data.cover.feed']: res.data.itemList[index].data.cover.feed,
-              ['rankList[' + index + '].data.title']: res.data.itemList[index].data.title,
-              ['rankList[' + index + '].data.playUrl']: res.data.itemList[index].data.playUrl,
-              ['rankList[' + index + '].data.category']: res.data.itemList[index].data.category,
-              ['rankList[' + index + '].data.description']: res.data.itemList[index].data.description,
-              ['rankList[' + index + '].data.cover.blurred']: res.data.itemList[index].data.cover.blurred,
-              ['rankList[' + index + '].data.id']: res.data.itemList[index].data.id
+            
+              ['rankList[' + index + ']']: res.data.itemList[index]
 
             })
           } else if (interval == 'monthly') {
             that.setData({
-              ['monthRankList[' + index + '].data.cover.feed']: res.data.itemList[index].data.cover.feed,
-              ['monthRankList[' + index + '].data.title']: res.data.itemList[index].data.title,
-              ['monthRankList[' + index + '].data.playUrl']: res.data.itemList[index].data.playUrl,
-              ['monthRankList[' + index + '].data.category']: res.data.itemList[index].data.category,
-              ['monthRankList[' + index + '].data.description']: res.data.itemList[index].data.description,
-              ['monthRankList[' + index + '].data.cover.blurred']: res.data.itemList[index].data.cover.blurred,
-              ['monthRankList[' + index + '].data.id']: res.data.itemList[index].data.id
+           
+              ['monthRankList[' + index + ']']: res.data.itemList[index]
 
             })
             hasMonthData = true
           } else {
             that.setData({
-              ['allRankList[' + index + '].data.cover.feed']: res.data.itemList[index].data.cover.feed,
-              ['allRankList[' + index + '].data.title']: res.data.itemList[index].data.title,
-              ['allRankList[' + index + '].data.playUrl']: res.data.itemList[index].data.playUrl,
-              ['allRankList[' + index + '].data.category']: res.data.itemList[index].data.category,
-              ['allRankList[' + index + '].data.description']: res.data.itemList[index].data.description,
-              ['allRankList[' + index + '].data.cover.blurred']: res.data.itemList[index].data.cover.blurred,
-              ['allRankList[' + index + '].data.id']: res.data.itemList[index].data.id
+             
+               ['allRankList[' + index + ']']: res.data.itemList[index]
 
             })
             hasHistoricalData = true

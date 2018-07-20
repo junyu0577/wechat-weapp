@@ -46,14 +46,7 @@ Page({
 
             that.setData({
 
-              ['imgUrls[' + conut + '].data.cover.feed']: res.data.issueList[0].itemList[index].data.cover.feed,
-              ['imgUrls[' + conut + '].data.title']: res.data.issueList[0].itemList[index].data.title,
-              ['imgUrls[' + conut + '].data.playUrl']: res.data.issueList[0].itemList[index].data.playUrl,
-              ['imgUrls[' + conut + '].data.category']: res.data.issueList[0].itemList[index].data.category,
-              ['imgUrls[' + conut + '].data.description']: res.data.issueList[0].itemList[index].data.description,
-              ['imgUrls[' + conut + '].data.cover.blurred']: res.data.issueList[0].itemList[index].data.cover.blurred,
-              ['imgUrls[' + conut + '].data.id']: res.data.issueList[0].itemList[index].data.id,
-
+              ['imgUrls[' + conut + ']']: res.data.issueList[0].itemList[index],
 
             })
             conut++
@@ -94,15 +87,8 @@ Page({
             tags = tags + Utils.durationFormat(res.data.issueList[0].itemList[index].data.duration)
 
             that.setData({
-
-              ['dailyList[' + globalCount + '].data.cover.feed']: res.data.issueList[0].itemList[index].data.cover.feed,
-              ['dailyList[' + globalCount + '].data.title']: res.data.issueList[0].itemList[index].data.title,
-              ['dailyList[' + globalCount + '].data.playUrl']: res.data.issueList[0].itemList[index].data.playUrl,
-              ['dailyList[' + globalCount + '].data.category']: res.data.issueList[0].itemList[index].data.category,
-              ['dailyList[' + globalCount + '].data.description']: res.data.issueList[0].itemList[index].data.description,
-              ['dailyList[' + globalCount + '].data.cover.blurred']: res.data.issueList[0].itemList[index].data.cover.blurred,
-              ['dailyList[' + globalCount + '].data.id']: res.data.issueList[0].itemList[index].data.id,
-              ['dailyList[' + globalCount + '].data.author.icon']: res.data.issueList[0].itemList[index].data.author.icon,
+          
+              ['dailyList[' + globalCount + ']']: res.data.issueList[0].itemList[index],
               ['dailyList[' + globalCount + '].data.tags']: tags
 
             })

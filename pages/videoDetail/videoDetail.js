@@ -52,9 +52,7 @@ Page({
             
             that.setData({
 
-              ['recommendList[' + conut + '].data.cover.feed']: res.data.itemList[index].data.cover.feed,
-              ['recommendList[' + conut + '].data.title']: res.data.itemList[index].data.title,
-             
+              ['recommendList[' + conut + ']']: res.data.itemList[index],
 
             })
             conut++

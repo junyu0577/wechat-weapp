@@ -5,7 +5,7 @@
 
     <view style='margin-left:5px;margin-right:5px;'>
 
-      <navigator class="weui-grid" hover-class="weui-grid_active" bindtap='goVideoList' data-category_id='{{item.id}}' data-category_name='{{item.name}}'> 
+      <View  class="weui-grid" hover-class="weui-grid_active" bindtap='goVideoList' data-category_id='{{item.id}}' data-category_name='{{item.name}}'> 
         <image class="weui-grid-icon" src="{{item.bgPicture}}"  />
 
         <view class="weui-grid-icon-cover" style=' width:{{cover_image_width}}px;' />
@@ -13,7 +13,7 @@
         <view class="find-list-text-view" style='width:{{text_view_width}}px;'>
           <text class="find-list-text">{{item.name}}</text>
         </view>
-      </navigator>
+      </View>
 
     </view>
 

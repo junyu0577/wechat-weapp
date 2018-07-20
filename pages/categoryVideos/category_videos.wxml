@@ -3,8 +3,7 @@
 
   <view>
     <block wx:for="{{videoList}}" wx:key="image">
-      <view class="video-recommend_root_view" bindtap='goViewDetail' data-videoUrl="{{item.data.playUrl}}" data-category='{{item.data.category}}' data-description='{{item.data.description}}' data-title='{{item.data.title}}' data-blurred_cover='{{item.data.cover.blurred}}'
-        data-video_id='{{item.data.id}}'>
+      <view class="video-recommend_root_view" bindtap='goViewDetail' data-videoData="{{item.data}}">
 
         <image src='{{item.data.cover.feed}}' mode='aspectFill' class="video-recommend_image"></image>
         <view class="video-recommend_image-cover" />
