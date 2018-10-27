@@ -15,7 +15,7 @@ var DAILY_DATA = 'v2/feed?date=[timeStamp]&num=1&phoneSystem=&phoneModel='
 
 var CATEGORIES = 'v4/categories?phoneSystem=&phoneModel='
 
-var CATEGORY_VIDEO_LIST = 'v4/categories/videoList?&id=[id]&phoneSystem=&phoneModel='
+var CATEGORY_VIDEO_LIST = 'v4/categories/videoList?id=[id]&udid=0dc2fb1f8d714901abb18e50ea40d1483126a3b8'
 
 
 //开眼热门排行
